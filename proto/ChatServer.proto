@@ -1,0 +1,18 @@
+syntax = "proto3";
+import "google/protobuf/empty.proto";
+
+// option go_package = "github.com/bayonetto666/cpp-go-messanger-protos/proto;chat";
+option go_package = "bayonetto666.cpp-go-messanger.v1;chat";
+
+package chat;
+
+service ChatService {
+  rpc CreateRoom (google.protobuf.Empty) returns (RoomResponse);
+}
+
+message RoomResponse {
+  string room_id = 1;
+  string error = 2;
+}
+
+ 
